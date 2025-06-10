@@ -44,6 +44,7 @@ class ProductController extends Controller
     {
         session_start();
         $tableNo = decrypt($id);
+        $checkout = null;
         if(!$tableNo) redirect('/');
         if(!isset($_SESSION['session_product'])) $_SESSION['session_product'] = $id;
         else {
