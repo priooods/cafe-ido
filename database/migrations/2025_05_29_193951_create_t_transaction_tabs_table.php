@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('t_transaction_tabs', function (Blueprint $table) {
             $table->id();
-            $table->string('session_product')->comment('encrypted table_number');
             $table->unsignedBigInteger('t_transaction_checkout_tabs_id')->nullable();
             $table->unsignedBigInteger('t_product_tabs_id');
             $table->smallInteger('count')->default(1)->comment('Count Product');

@@ -27,6 +27,12 @@ class ProductResource extends Resource
     protected static ?string $breadcrumb = "Product";
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        if (auth()->user()->m_user_role_tabs_id == 1 || auth()->user()->m_user_role_tabs_id == 2) return true;
+        else return false;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -38,7 +44,7 @@ class ProductResource extends Resource
                     ->label('Pilih Category')
                     ->relationship('category', 'title')
                     ->placeholder('Cari Category')
-                    ->options(MCategoryTab::where('m_status_tabs_id',8)->pluck('title', 'id'))
+                ->options(MCategoryTab::where('m_status_tabs_id', 10)->pluck('title', 'id'))
                     ->searchable()
                     ->required()
                     ->getSearchResultsUsing(fn(string $search): array => MCategoryTab::where('m_status_tabs_id', 8)->where('title', 'like', "%{$search}%")->limit(5)->pluck('title', 'id')->toArray())

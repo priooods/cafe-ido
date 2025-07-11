@@ -25,8 +25,10 @@ return new class extends Migration
                 ['title' => 'Complete Order'], //5
                 ['title' => 'Complete Payment'], //6
                 ['title' => 'Waiting Payment'], //7
-                ['title' => 'Active'], //8
-                ['title' => 'Not Active'], //9
+                ['title' => 'Failure Payment'], //8
+                ['title' => 'Refund Payment'], //9
+                ['title' => 'Active'], //10
+                ['title' => 'Not Active'], //11
             )
         );
     }

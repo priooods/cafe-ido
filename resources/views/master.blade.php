@@ -31,18 +31,18 @@
     }
   </style>
 </head>
-<body class="bg-white text-gray-800">
-    <div class=" max-w-md mx-auto pt-4 pb-2 min-h-screen border">
-        @yield('main')
-    </div>
+  <body class="bg-white text-gray-800 relative min-h-screen">
+      <div class=" max-w-md mx-auto h-screen border flex flex-col">
+          @yield('main')
+      </div>
 
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
+    <script>
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
 
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
-</body>
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
 </html>

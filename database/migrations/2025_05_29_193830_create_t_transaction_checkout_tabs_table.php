@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('t_transaction_checkout_tabs', function (Blueprint $table) {
             $table->id();
-            $table->string('session_checkout')->comment('yyyymmddhhmmss;tablenumber');
             $table->unsignedInteger('m_status_tabs_id');
             $table->string('customer_name');
             $table->string('customer_phone');
@@ -21,8 +20,9 @@ return new class extends Migration
             $table->tinyInteger('cashier')->default(0)->comment('0 = on cashier, 1 = on debit');
             $table->integer('table_number');
             $table->string('path')->nullable();
-            $table->string('amount_paid')->nullable();
-            $table->string('amount_change')->nullable();
+            $table->bigInteger('bill');
+            $table->bigInteger('amount_paid')->nullable();
+            $table->bigInteger('amount_change')->nullable();
             $table->timestamps();
             $table->foreign('m_status_tabs_id')->references('id')->on('m_status_tabs')->cascadeOnDelete();
         });

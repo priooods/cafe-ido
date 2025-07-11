@@ -15,7 +15,7 @@ class CreatePengguna extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['m_status_tabs_id'] = 9;
+        $data['m_status_tabs_id'] = 11;
         return $data;
     }
 
