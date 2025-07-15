@@ -83,10 +83,10 @@ class PenggunaResource extends Resource
                         ->label('Aktifkan')
                         ->action(function ($record) {
                             $record->update([
-                                'm_status_tabs_id' => 8,
+                        'm_status_tabs_id' => 10,
                             ]);
                         })
-                        ->visible(fn($record) =>  $record->m_status_tabs_id === 9)
+                    ->visible(fn($record) =>  $record->m_status_tabs_id === 11)
                         ->icon('heroicon-o-check')
                         ->color('success')
                         ->requiresConfirmation()
@@ -98,10 +98,10 @@ class PenggunaResource extends Resource
                         ->label('Non Aktifkan')
                         ->action(function ($record) {
                             $record->update([
-                                'm_status_tabs_id' => 9,
+                        'm_status_tabs_id' => 11,
                             ]);
                         })
-                        ->visible(fn($record) => $record->m_status_tabs_id === 8)
+                    ->visible(fn($record) => $record->m_status_tabs_id === 10)
                         ->icon('heroicon-o-no-symbol')
                         ->color('danger')
                         ->requiresConfirmation()
